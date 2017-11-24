@@ -1,0 +1,4 @@
+api_app_homepage:
+    path:     /
+    defaults: { _controller: APIAppBundle:Default:index }
+    #type: rest

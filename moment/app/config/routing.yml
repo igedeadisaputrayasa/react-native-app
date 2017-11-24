@@ -1,0 +1,37 @@
+inventory:
+    resource: "@InventoryBundle/Resources/config/routing.yml"
+    prefix:   /inventory
+    
+api_app:
+    resource: "@APIAppBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+oauth_server:
+    resource: "@OauthServerBundle/Resources/config/routing.yml"
+    prefix:   /oauth
+
+login_user:
+    resource: "@LoginUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+home:
+    resource: "@HomeBundle/Resources/config/routing.yml"
+    prefix:   /home
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /nelmio/doc
+
+fos_user:
+    #resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    resource: "@LoginUserBundle/Resources/config/routing/all.xml"
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
