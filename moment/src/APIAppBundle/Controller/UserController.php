@@ -4,7 +4,7 @@ namespace APIAppBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use JMS\Serializer\SerializationContext;
+use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
@@ -54,8 +54,8 @@ class UserController extends FOSRestController
       case 200:
         $view = $this->view($data, $code);
         $groups_entity = array("api_user_lists");
-        $context = SerializationContext::create()->setGroups($groups_entity);
-        $view->setSerializationContext($context);
+        $context = new Context();
+        $view->setContext($context->setGroups($groups_entity));
         return $this->handleView($view);
         break;
       default:
