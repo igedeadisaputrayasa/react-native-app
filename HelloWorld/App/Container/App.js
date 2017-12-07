@@ -18,7 +18,6 @@ export default class App extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styleApp.container}>
-        <Text>Inventory System</Text>
         <LoginForm />
       </KeyboardAvoidingView>
     );
@@ -28,7 +27,10 @@ export default class App extends Component {
 
 const styleApp = StyleSheet.create({
   container : {
-      flex : 1
+      flex : 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#FFFFFF'
   }
 });
 
