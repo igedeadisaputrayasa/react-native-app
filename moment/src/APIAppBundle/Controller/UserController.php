@@ -8,10 +8,11 @@ use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Respect\Validation\Validator as RValidation;
 
 class UserController extends FOSRestController
 {
-  
+    
   /**
   * @Get("/lists")
   * @Route(options={"expose"=true})
@@ -20,7 +21,7 @@ class UserController extends FOSRestController
   *   description="Show All User List",
   * statusCode={
   *   200 = "Success",
-  *   505 = "Error",
+  *   505 = "Internal Server Error",
   *   401 = "Unauthorized"
   * },
   * output={
@@ -62,7 +63,6 @@ class UserController extends FOSRestController
         $view = $this->view($data, 404);
         return $this->handleView($view);
         break;
-    }
-    
+    }    
   }
 }
