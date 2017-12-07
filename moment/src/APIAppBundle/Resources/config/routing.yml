@@ -1,4 +1,9 @@
-api_app_homepage:
-    path:     /
-    defaults: { _controller: APIAppBundle:Default:index }
+#api_app_homepage:
+    #path:     /
+    #defaults: { _controller: APIAppBundle:Default:index }
     #type: rest
+
+api_app_user:
+    resource: APIAppBundle\Controller\UserController
+    type: rest
+    prefix: /user

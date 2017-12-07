@@ -8,6 +8,7 @@ namespace LoginUserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
@@ -21,6 +22,12 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var string $username
+     * @Groups({"api_user_lists"})
+     */
+    protected $username;
 
     /**
      * @var appKategori
